@@ -1,0 +1,50 @@
+#undef SYS_C
+#define SYS_C ".byte 0x0f, 0x05"
+
+static inline long sys_c_6(long n, long a1, long a2, long a3, long a4, long a5, long a6) {
+    register long r10 __asm__("r10") = a4;
+    register long r8 __asm__("r8") = a5;
+    register long r9 __asm__("r9") = a6;
+    register long ret __asm__("rax");
+    __asm__ volatile(SYS_C : "=a"(ret) : "a"(n), "D"(a1), "S"(a2), "d"(a3), "r"(r10), "r"(r8), "r"(r9) : "rcx", "r11", "memory");
+    return ret;
+}
+
+static inline long sys_c_5(long n, long a1, long a2, long a3, long a4, long a5) {
+    register long r10 __asm__("r10") = a4;
+    register long r8 __asm__("r8") = a5;
+    register long ret __asm__("rax");
+    __asm__ volatile(SYS_C : "=a"(ret) : "a"(n), "D"(a1), "S"(a2), "d"(a3), "r"(r10), "r"(r8) : "rcx", "r11", "memory");
+    return ret;
+}
+
+static inline long sys_c_4(long n, long a1, long a2, long a3, long a4) {
+    register long r10 __asm__("r10") = a4;
+    register long ret __asm__("rax");
+    __asm__ volatile(SYS_C : "=a"(ret) : "a"(n), "D"(a1), "S"(a2), "d"(a3), "r"(r10) : "rcx", "r11", "memory");
+    return ret;
+}
+
+static inline long sys_c_3(long n, long a1, long a2, long a3) {
+    register long ret __asm__("rax");
+    __asm__ volatile(SYS_C : "=a"(ret) : "a"(n), "D"(a1), "S"(a2), "d"(a3) : "rcx", "r11", "memory");
+    return ret;
+}
+
+static inline long sys_c_2(long n, long a1, long a2) {
+    register long ret __asm__("rax");
+    __asm__ volatile(SYS_C : "=a"(ret) : "a"(n), "D"(a1), "S"(a2) : "rcx", "r11", "memory");
+    return ret;
+}
+
+static inline long sys_c_1(long n, long a1) {
+    register long ret __asm__("rax");
+    __asm__ volatile(SYS_C : "=a"(ret) : "a"(n), "D"(a1) : "rcx", "r11", "memory");
+    return ret;
+}
+
+static inline long sys_c_0(long n) {
+    register long ret __asm__("rax");
+    __asm__ volatile(SYS_C : "=a"(ret) : "a"(n) : "rcx", "r11", "memory");
+    return ret;
+}

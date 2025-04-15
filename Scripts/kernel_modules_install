@@ -1,0 +1,5 @@
+#!/bin/sh
+
+
+make modules_install INSTALL_MOD_STRIP=1 INSTALL_MOD_PATH="$1" || exit $?
+rm -rfv "$1/lib/modules/$(make kernelrelease)/build"
