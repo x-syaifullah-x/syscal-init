@@ -1,0 +1,13 @@
+#ifndef MOUNT_H
+#define MOUNT_H
+
+#define MS_NOSUID 0x00000002
+#define MS_NODEV 0x00000004
+#define MS_NOEXEC 0x00000008
+#define MS_NOATIME 0x00000400
+#define MS_MOVE 0x00002000
+#define MS_PRIVATE 1 << 18
+#define MS_REC 16384
+#define MS_BIND 4096
+
+#endif

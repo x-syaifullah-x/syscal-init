@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "mount.h": "c",
+        "syscall.h": "c",
+        "ioctl.h": "c",
+        "sys_c.h": "c",
+        "fcntl.h": "c"
+    }
+}
