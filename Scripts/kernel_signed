@@ -1,0 +1,10 @@
+#!/bin/sh
+
+_CERT_DIR=$1
+_FILE=$2
+
+sbsign --key "$_CERT_DIR/MOK.priv" --cert "$_CERT_DIR/MOK.pem" --output "${_FILE}.signed" "$_FILE" || exit $?
+
+sbverify --cert "$_CERT_DIR/MOK.pem" "${_FILE}.signed" || exit $?
+
+mv -fv "${_FILE}.signed" "$_FILE" || exit $?

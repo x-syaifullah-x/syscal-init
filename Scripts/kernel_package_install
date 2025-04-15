@@ -1,0 +1,3 @@
+#!/bin/sh
+
+apt install --no-install-suggests --no-install-recommends make gcc libc6-dev libelf-dev libssl-dev bc lz4 sbsigntool libncurses-dev flex bison openssl

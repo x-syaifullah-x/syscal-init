@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ -f localversion ] && rm -rfv localversion
+
+ln -sfv /dev/null .version

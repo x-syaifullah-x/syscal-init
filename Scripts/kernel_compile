@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export KBUILD_BUILD_USER="xxx"
+export KBUILD_BUILD_HOST="x-host"
+
+export KCFLAGS="-march=native -mtune=native"
+
+make CC="gcc" HOSTCC="gcc" --jobs=$(nproc)
