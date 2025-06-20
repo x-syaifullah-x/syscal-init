@@ -1,0 +1,3 @@
+[submodule "Initramfs/Init"]
+	path = Initramfs/Init
+	url = ssh://git@github.com/x-syaifullah-x/init-minimal
